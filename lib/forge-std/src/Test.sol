@@ -1,7 +1,5 @@
-// SPDX-License-Identifier: MIT
-pragma solidity >=0.6.2 <0.9.0;
-
-pragma experimental ABIEncoderV2;
+// SPDX-License-Identifier: MIT OR Apache-2.0
+pragma solidity >=0.8.13 <0.9.0;
 
 // 💬 ABOUT
 // Forge Std's default Test.
@@ -27,8 +25,10 @@ import {Vm} from "./Vm.sol";
 // 📦 BOILERPLATE
 import {TestBase} from "./Base.sol";
 
-// ⭐️ TEST
+/// @notice Default base contract for Forge tests.
+/// @dev Includes assertions, cheatcodes, invariant helpers, chain helpers, utility helpers, and console modules.
 abstract contract Test is TestBase, StdAssertions, StdChains, StdCheats, StdInvariant, StdUtils {
-    // Note: IS_TEST() must return true.
+    /// @notice Marker used by Forge to identify test contracts.
+    /// @dev The generated `IS_TEST()` getter must return true.
     bool public IS_TEST = true;
 }

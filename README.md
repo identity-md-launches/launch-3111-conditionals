@@ -179,7 +179,12 @@ change, obtain a fresh report and confirmation. If the system cannot retain all
 All Solidity dependencies are vendored as ordinary source files in `lib/`, with
 upstream revisions and archive hashes in `dependencies.json`. Only the required
 source subsets and licenses are included; there are no submodules or package
-downloads during builds. Foundry pins solc **0.8.26**, Cancun, optimizer 200 runs,
+downloads during builds. `forge-std` is vendored at release **v1.17.0** (commit
+`f3dae6e6`): the pinned launch floor (`Hook.protected.t.sol`,
+`Owners.protected.t.sol`) calls `fail(string)`, an assertion helper forge-std
+added in v1.10.0, and it is compiled inside this tree with this tree's
+remappings, so an older forge-std makes the floor itself fail to compile. The
+other three dependencies are unchanged. Foundry pins solc **0.8.26**, Cancun, optimizer 200 runs,
 and `bytecode_hash = "none"`. FFI and filesystem cheatcode permissions are not
 enabled. The verification environment supplies the pinned compiler.
 

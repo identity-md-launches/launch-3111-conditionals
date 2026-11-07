@@ -1,10 +1,10 @@
 [
   {
     "repository": "https://github.com/foundry-rs/forge-std",
-    "commit": "77041d2ce690e692d6e03cc812b57d1ddaa4d505",
-    "archiveSha256": "a387f7c2a10387f889b0d18b999cfa667a5273ac11cc11e18923022eb8b24bc3",
+    "commit": "f3dae6e6ee381f25eb6a246f7da9b85c91a68219",
+    "archiveSha256": "e1eab5f0891018e368a0417bfe266d93f8b9af9484e5a15b15f87f1f4b7c50aa",
     "path": "lib/forge-std",
-    "files": 30
+    "files": 34
   },
   {
     "repository": "https://github.com/OpenZeppelin/openzeppelin-contracts",
