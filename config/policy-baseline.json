@@ -1,0 +1,52 @@
+{
+  "chainId": 4663,
+  "owner": "0x612a9bb008e16ef2d24f41dae9fc661831d93367",
+  "token": {
+    "contract": "ConditionalsToken",
+    "name": "Conditionals",
+    "symbol": "CONDITIONAL",
+    "decimals": 18,
+    "totalSupply": "1000000000000000000000000000"
+  },
+  "allocation": {
+    "swarmBps": 1000,
+    "poolBps": 8000,
+    "remainderBps": 1000
+  },
+  "recipients": {
+    "swarm": "launch MerkleDistributor, resolved by factory",
+    "pool": "PoolManager liquidity position held by factory",
+    "remainder": "paying wallet, or chain treasury if nobody pays"
+  },
+  "pool": {
+    "pairedCurrency": "0x5f7bb59365ce557c26dbcaa4ee9d39a4b95b7127",
+    "fee": 12500,
+    "tickSpacing": 60,
+    "initialPrice": "79228162514264337593543950336"
+  },
+  "hook": {
+    "contract": "ConditionalsHook",
+    "constructorArgs": ["$poolManager"],
+    "flags": 8192,
+    "hookFeeBps": 0,
+    "pausable": false,
+    "access": "none",
+    "shares": false,
+    "permissions": {
+      "beforeInitialize": true,
+      "afterInitialize": false,
+      "beforeAddLiquidity": false,
+      "afterAddLiquidity": false,
+      "beforeRemoveLiquidity": false,
+      "afterRemoveLiquidity": false,
+      "beforeSwap": false,
+      "afterSwap": false,
+      "beforeDonate": false,
+      "afterDonate": false,
+      "beforeSwapReturnDelta": false,
+      "afterSwapReturnDelta": false,
+      "afterAddLiquidityReturnDelta": false,
+      "afterRemoveLiquidityReturnDelta": false
+    }
+  }
+}
