@@ -1,0 +1,27 @@
+{
+  "kind": "univ4_hook",
+  "hook": {
+    "contract": "ConditionalsHook",
+    "constructorArgs": [
+      "$poolManager"
+    ],
+    "permissions": [
+      "beforeInitialize"
+    ]
+  },
+  "token": {
+    "contract": "ConditionalsToken",
+    "name": "Conditionals",
+    "symbol": "CONDITIONALS",
+    "decimals": 18,
+    "constructorArgs": [],
+    "totalSupply": "1000000000000000000000000000"
+  },
+  "pool": {
+    "pairedCurrency": "0x5f7bb59365ce557c26dbcaa4ee9d39a4b95b7127",
+    "fee": 12500,
+    "tickSpacing": 60,
+    "initialPrice": "79228162514264337593543950336"
+  },
+  "notes": "Symbol is exactly CONDITIONALS (12 characters), as the brief's explicit exact-symbol instruction requires; the brief's later 'Token symbol: CONDITIONAL' line conflicts with it and is not used. ConditionalsToken's constructor takes no arguments and mints its fixed INITIAL_SUPPLY of 1,000,000,000 CONDITIONALS (1e27 minor units, 18 decimals) once to msg.sender, the launch factory; nothing else mints. ConditionalsHook takes only the chain's PoolManager ($poolManager), has no owner, admin, hook fee, custody or return deltas, and declares only beforeInitialize, which accepts calls only from the PoolManager, returns its selector, and does not restrict the LP fee, so the pool opens at the listed 12500 fee. Every other setting (supply, allocation handled by the factory, paired currency IMD, tick spacing 60, initial price, hook behavior) is unchanged from the existing configuration. This manifest only describes the build; no payment, quote or broadcast has occurred, and the launch system must still confirm it accepts a 12-character symbol and quote total cost before confirmation."
+}
